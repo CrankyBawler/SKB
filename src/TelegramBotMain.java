@@ -43,7 +43,8 @@ public class TelegramBotMain {
                 && httpAnswer.contains("patch") && httpAnswer.contains("delete")) {
             System.out.println("Все верно");
         } else {
-            System.out.println("Ответ не верный");
+            System.out.println("Ответ не верный!");
+
 
         }
     }
