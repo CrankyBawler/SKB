@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class CoffeeMachine {
@@ -5,26 +7,29 @@ public class CoffeeMachine {
         System.out.println("Кофемашина");
 
         System.out.println("Введите количетсво денег:");
-        int moneuAmount = new Scanner(System.in).nextInt();
+        int moneyAmount = new Scanner(System.in).nextInt();
 
-        int cappuccinoPrice = 200;
-        int espressoPrice = 100;
-        int waterPrice = 50;
+        ArrayList<Product> products = new ArrayList<>();
 
-        if (moneuAmount >= cappuccinoPrice) {
-            System.out.println("Вы можете купить куппучино");
+
+        products.add(new Product(200, "Каппучино"));
+        products.add(new Product(100, "Эспрессо"));
+        products.add(new Product(50, "Вода"));
+
+        checkPrices(moneyAmount, products);
+
+    }
+     public static void checkPrices (int moneyAmount, ArrayList < Product > products) {
+
+        for (Product product : products) {
+            if (moneyAmount >= product.getPrice()) {
+                System.out.println("Вы можете купить " + product.getName());
 
         }
-        if (moneuAmount >= espressoPrice) {
-            System.out.println("Вы можете купить еспрессо");
 
-        }
-        if (moneuAmount >= waterPrice) {
-            System.out.println("Вы можете купить воду");
-
-        }
 
 
     }
 
+}
 }
